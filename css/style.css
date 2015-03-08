@@ -52,6 +52,9 @@ header a {
   float: right;
   background-color: #1a365e;
 }
+header a:hover {
+  background-color: #1f4272;
+}
 figure {
   width: 33.33333333%;
   margin: 0;
@@ -99,6 +102,10 @@ figure:after {
 figure.play:before {
   display: none;
 }
+figure.play:after {
+  color: #fff;
+  background-color: #8CC152;
+}
 figcaption {
   padding-top: 15px;
   font-size: 14px;
@@ -111,7 +118,7 @@ figcaption a {
 .demo-content {
   width: 960px;
   height: 300px;
-  margin-top: 60px;
+  margin-top: 90px;
   margin-right: auto;
   margin-left: auto;
   -webkit-transition: opacity 350ms;

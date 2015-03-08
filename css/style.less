@@ -49,6 +49,9 @@ header {
 		text-decoration: none;
 		float: right;
 		background-color: darken(@color, 10%);
+		&:hover {
+			background-color: darken(@color, 5%);
+		}
 	}
 }
 figure {
@@ -101,6 +104,10 @@ figure {
 	&.play:before  {
 		display: none;
 	}
+	&.play:after  {
+		color: #fff;
+		background-color: #8CC152;
+	}
 }
 figcaption {
 	padding-top: 15px;
@@ -114,7 +121,7 @@ figcaption {
 .demo-content {
 	width: 960px;
 	height: 300px;
-	margin-top: 60px;
+	margin-top: 90px;
 	margin-right: auto;
 	margin-left: auto; 
 	transition: opacity 350ms;
