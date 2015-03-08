@@ -1,6 +1,6 @@
 (function($) {
-	var image = []
-	
+
+	// Get the .gif images from the "data-alt".
 	var getGif = function() {
 		var gif = [];
 		$('img').each(function() {
@@ -12,11 +12,14 @@
 
 	var gif = getGif();
 
+	// Preload all the gif images.
+	var image = [];
 	for (var i = gif.length - 1; i >= 0; i--) {
 		image[i]     = new Image();
 		image[i].src = gif[i];
 	};
 
+	// Change the image to .gif when clicked and vice versa.
 	$('figure').on('click', function() {
 
 		var $this   = $(this),
@@ -33,6 +36,7 @@
 			$img.attr('src', $imgAlt).attr('data-alt', $img.data('alt'));
 		}
 
+		// Add play class to help with the styling.
 		$this.toggleClass('play');
 
 	});

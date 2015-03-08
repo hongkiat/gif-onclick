@@ -1,8 +1,6 @@
 html {
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 *,
 *:before,
@@ -29,7 +27,7 @@ img {
   max-width: 100%;
   height: auto;
   border: 5px solid #fff;
-  cursor: pointer;
+  vertical-align: top;
   -webkit-transition: opacity 350ms;
           transition: opacity 350ms;
 }
@@ -60,10 +58,30 @@ figure {
   float: left;
   padding: 10px;
   position: relative;
+  cursor: pointer;
+}
+figure:before,
+figure:after {
+  position: absolute;
+}
+figure:before {
+  top: 103.5px;
+  left: 50%;
+  margin-left: -25px;
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  border-radius: 25px;
+  background-color: rgba(204, 209, 217, 0.3);
+  font-family: 'Ionicons';
+  content: '\f215';
+  text-align: center;
+  line-height: 45px;
+  font-size: 19px;
+  color: #F5F7FA;
 }
 figure:after {
   content: 'gif';
-  text-transform: uppercase;
   position: absolute;
   display: inline-block;
   width: 40px;
@@ -75,21 +93,14 @@ figure:after {
   padding: 5px;
   border-radius: 3px;
   color: #656D78;
-  background-color: rgba(245, 247, 250, 0.9);
-  -webkit-transition: all 350ms;
-          transition: all 350ms;
+  background-color: rgba(170, 178, 189, 0.1);
+  text-transform: uppercase;
 }
-figure:hover:after {
-  content: 'play';
-  background-color: #8CC152;
-  color: #fff;
-}
-figure.play:hover:after {
-  content: 'stop';
-  background-color: #DA4453;
+figure.play:before {
+  display: none;
 }
 figcaption {
-  margin-top: 15px;
+  padding-top: 15px;
   font-size: 14px;
   color: #8d9bad;
 }
