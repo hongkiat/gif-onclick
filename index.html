@@ -32,8 +32,7 @@
 	<script>
 
 	(function($) {
-		
-		var image = new Image();
+		var image = []
 		
 		var getGif = function() {
 			var gif = [];
@@ -47,15 +46,13 @@
 		var gif = getGif();
 
 		for (var i = gif.length - 1; i >= 0; i--) {
-			image.src = gif[i];
-			console.log(image.src);
+			image[i]     = new Image();
+			image[i].src = gif[i];
 		};
 
 		$('figure').on('click', function() {
-			var $this  = $(this);
-			var $index = $this.index();
-
-			$this.children('img').attr('src', gif[$index]);
+			var $index = $(this).index();
+			$(this).children('img').attr('src', image[$index].src);
 		});
 
 	})(jQuery);
