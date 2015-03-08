@@ -32,14 +32,32 @@
 	<script>
 
 	(function($) {
-
-		var image = new Image();
-
-		$('img').on('click', function() {
-			image.src = $(this).data('gif');
-			$(this).attr('src',image.src);
-		});
 		
+		var image = new Image();
+		
+		var getGif = function() {
+			var gif = [];
+			$('img').each(function() {
+				var data = $(this).data('gif');
+				gif.push(data);
+			});
+			return gif;
+		}
+
+		var gif = getGif();
+
+		for (var i = gif.length - 1; i >= 0; i--) {
+			image.src = gif[i];
+			console.log(image.src);
+		};
+
+		$('figure').on('click', function() {
+			var $this  = $(this);
+			var $index = $this.index();
+
+			$this.children('img').attr('src', gif[$index]);
+		});
+
 	})(jQuery);
 
 	</script>
