@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Run Animated GIF On-click</title>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+
+	<header class="demo-header cf">
+		<h1>Run Animated GIF On-click</h1>
+		<a href="#">Back to Article</a>
+	</header>
+
+	<div class="demo-content cf">
+		<figure>
+			<img src="img/mobile-wireframe.png" height="300" width="400" alt="Static Image" data-gif="img/mobile-wireframe.gif">
+			<figcaption>UI8 Wireframe Kit by <a href="https://dribbble.com/Creativedash">Creativedash</a></figcaption>
+		</figure>
+		<figure>
+			<img src="img/twitter-button.png" height="600" width="800" alt="Twitter Share Button" data-gif="img/twitter-button.gif">
+			<figcaption>Twitter Share Button by <a href="https://dribbble.com/keisato">Kei Sato</a></figcaption>
+		</figure>
+		<figure>
+			<img src="img/get-low.png" height="300" width="400" alt="" data-gif="img/get-low.gif">
+			<figcaption>Slammed Metal by <a href="https://dribbble.com/MemoryLane">Lhor</a></figcaption>
+		</figure>
+	</div>
+
+	<script>
+
+	(function($) {
+
+		var image = new Image();
+
+		$('img').on('click', function() {
+			image.src = $(this).data('gif');
+			$(this).attr('src',image.src);
+		});
+		
+	})(jQuery);
+
+	</script>
+</body>
+</html>
