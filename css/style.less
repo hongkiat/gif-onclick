@@ -2,6 +2,9 @@
 
 html {
   box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -27,6 +30,7 @@ img {
 	height: auto;
 	border: 5px solid #fff;
 	cursor: pointer;
+	transition: opacity 350ms;
 }
 header {
 	@color: #254d86;
@@ -42,7 +46,6 @@ header {
 		margin: 0;
 	}
 	a {
-		font-weight: 300;
 		padding-left: 20px;
 		padding-right: 20px;
 		text-decoration: none;
@@ -60,14 +63,28 @@ figure {
 		content: 'gif';
 		text-transform: uppercase;
 		position: absolute;
+		display: inline-block;
+		text-align: center;
+		width: 40px;
+		text-align: center;
 		top: 20px;
 		right: 20px;
 		font-size: 11px;
 		font-weight: 600;
 		padding: 5px;
 		border-radius: 3px;
-		color: #656d78;
-		background-color: fadeout(#fff, 50%);
+		color: #656D78;
+		background-color: fadeout(#F5F7FA, 10%);
+		transition: all 350ms;
+	}
+	&:hover:after {
+		content: 'play';
+		background-color: #8CC152;
+		color: #fff;
+	}
+	&.play:hover:after {
+		content: 'stop';
+		background-color: #DA4453;
 	}
 }
 figcaption {
@@ -87,7 +104,6 @@ figcaption {
 	margin-left: auto; 
 	transition: opacity 350ms;
 }
-
 
 // Pace.js
 .pace {
