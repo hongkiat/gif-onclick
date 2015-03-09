@@ -10,14 +10,15 @@
 		return gif;
 	}
 
-	var gif = getGif();
+	var $gif = getGif();
 
 	// Preload all the gif images.
 	var image = [];
-	for (var i = gif.length - 1; i >= 0; i--) {
-		image[i]     = new Image();
-		image[i].src = gif[i];
-	};
+
+	$.each($gif, function(index) {
+		image[index]     = new Image();
+		image[index].src = $gif[index];
+	});
 
 	// Change the image to .gif when clicked and vice versa.
 	$('figure').on('click', function() {
