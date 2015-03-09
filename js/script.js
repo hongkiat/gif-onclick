@@ -1,6 +1,6 @@
 (function($) {
 
-	// Get the .gif images from the "data-alt".
+  // Get the .gif images from the "data-alt".
 	var getGif = function() {
 		var gif = [];
 		$('img').each(function() {
@@ -10,14 +10,14 @@
 		return gif;
 	}
 
-	var $gif = getGif();
+	var gif = getGif();
 
 	// Preload all the gif images.
 	var image = [];
 
-	$.each($gif, function(index) {
+	$.each(gif, function(index) {
 		image[index]     = new Image();
-		image[index].src = $gif[index];
+		image[index].src = gif[index];
 	});
 
 	// Change the image to .gif when clicked and vice versa.
